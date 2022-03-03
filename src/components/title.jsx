@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Title = () => {
   return (
-    <Header>
+    <Header 
+    initial={{scale: 0.3}}
+    animate={{scale: 1}}
+    transition={{type: 'spring', stiffness: 250}}>
       <h1>
         <span>Gaming Site</span>
         <span>Gaming Site</span>
@@ -12,7 +16,7 @@ export const Title = () => {
   );
 };
 
-const Header = styled.div`
+const Header = styled(motion.div)`
   margin-top: 10rem;
   display: flex;
   align-items: center;
@@ -60,8 +64,8 @@ const Header = styled.div`
         #00a1ef 35%,
         white 50%,
         #20125f 50%,
-        #8313e7 55%,
-        #ff61af 75%
+        // #8313e7 70%,
+        #ff61af 80%
       );
       -webkit-text-stroke: 0.01em #94a0b9;
       -webkit-background-clip: text;

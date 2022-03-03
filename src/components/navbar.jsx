@@ -1,47 +1,117 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { withTheme } from "styled-components";
+import { useRef, useState } from "react";
+import { useDimensions } from "../utils/dimensions";
+import { motion } from "framer-motion";
+import { linkData } from "../utils/linkData";
+
+const flexVariants = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 130.5px 128.5px)`,
+    transition: {
+      type: "spring",
+      stiffness: 30,
+      restDelta: 2,
+      delayChildren: 0.15,
+      staggerChildren: 0.1,
+    },
+  }),
+  closed: {
+    clipPath: "circle(45px at 130.5px 128.5px)",
+    transition: {
+      delay: 0.8,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const linkVariants = {
+  open: {
+    opacity: 1,
+    transition: {
+      type: "tween",
+    },
+  },
+  closed: {
+    opacity: 0,
+  },
+};
+
+const Path = (props) => (
+  <motion.path
+    fill="transparent"
+    strokeWidth="3"
+    stroke="hsl(0, 21%, 92%)"
+    strokeLinecap="round"
+    {...props}
+  />
+);
 
 export const Navbar = ({ loggedIn }) => {
   const [open, setOpen] = useState(false);
-
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
   const style = { textDecoration: "none", color: "white" };
 
   return (
     <div>
       <StyledNavbar>
-        <Button onClick={() => setOpen(!open)}>Open</Button>
-        <Flex open={open}>
-          <SyledLink to="/" style={style}>
-            {" "}
-            Home{" "}
-          </SyledLink>
-          {loggedIn ? (
-            <SyledLink to="/profile" style={style}>
-              {" "}
-              Profile{" "}
+        <Flex
+          open={open}
+          variants={flexVariants}
+          initial={false}
+          animate={open ? "open" : "closed"}
+          height={height}
+          ref={containerRef}
+        >
+          <Button
+            onClick={() => setOpen(!open)}
+            whileHover={{
+              boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+              background: "LightBlue",
+              filter: "drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))",
+            }}
+          >
+            <svg width="50" height="50" viewBox="-1 0 23 23">
+              <Path
+                variants={{
+                  closed: { d: "M 2 2.5 L 20 2.5" },
+                  open: { d: "M 3 16.5 L 17 2.5" },
+                }}
+              />
+              <Path
+                d="M 2 9.423 L 20 9.423"
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 },
+                }}
+                transition={{ duration: 0.1 }}
+              />
+              <Path
+                variants={{
+                  closed: { d: "M 2 16.346 L 20 16.346" },
+                  open: { d: "M 3 2.5 L 17 16.346" },
+                }}
+              />
+            </svg>
+          </Button>
+          {linkData.map((link) => (
+            <SyledLink
+              key={linkData.indexOf(link)}
+              to={link.url}
+              style={style}
+              variants={linkVariants}
+              whileHover={{
+                background: "LightBlue",
+                boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+              }}
+            >
+              {link.title}
             </SyledLink>
-          ) : (
-            <SyledLink to="/login" style={style}>
-              {" "}
-              Login{" "}
-            </SyledLink>
-          )}
-          {!loggedIn && (
-            <SyledLink to="/register" style={style}>
-              {" "}
-              Register{" "}
-            </SyledLink>
-          )}
-          <SyledLink to="/faqs" style={style}>
-            {" "}
-            FAQs{" "}
-          </SyledLink>
-          <SyledLink to="/getintouch" style={style}>
-            {" "}
-            Get in Touch
-          </SyledLink>
+          ))}
         </Flex>
         )
       </StyledNavbar>
@@ -49,59 +119,52 @@ export const Navbar = ({ loggedIn }) => {
   );
 };
 
-const StyledNavbar = styled.div`
+const StyledNavbar = styled(motion.div)`
   box-styling: border-box;
   position: fixed;
   top: 0;
   height: 100%;
 `;
 
-const Button = styled.div`
-  border: 3px solid lightgrey;
-  ${({ open }) =>
-    open
-      ? `
-  width: 50px;
-  `
-      : `width : 250;`}
-  text-align: center;
-  font-weight: 600;
+const Button = styled(motion.div)`
+  box-sizing: border-box;
   cursor: pointer;
-  padding: 1rem;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 60%;
+  margin: 5.5rem 0 5.5rem 5.5rem;
   color: white;
-  background-color: #073f59;
-  background-image linear-gradient( #073f59 30%, #0c7aad 74%);
   z-index: 10;
-  border-bottom-right-radius: 5px;
+  border: 2px solid lightgrey;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 `;
 
-const Flex = styled.div`
+const Flex = styled(motion.div)`
   display: flex;
   flex-direction: column;
   border: 3px solid lightgrey;
   border-top: none;
-  ${({ open }) =>
-    open
-      ? `
+  height: 100%; 
   width: 250px;
-  padding: 1rem;
-  height: 100%;
-  `
-      : `
-    display: none;
-  width: 0px;
-  padding: 0rem;
-  `}
-  height: 100%;
   color: white;
-  background-color #9921e8;
-  background-image linear-gradient(315deg, #f062fc 3%, #9921e8 50%, #0c7aad 74% );
-  #z-index: 10;
+  background-color #7c3aa6;
+  background-image linear-gradient(315deg,  #b33ba7 3%, #46265c 50%, #0c7aad 74%, #073f59 100% );
+  z-index: 10;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  transition: 1s ease;
 `;
 
-const SyledLink = styled(Link)`
-  margin: 2rem 0;
+const SyledLink = styled(motion(Link))`
+  text-align: center;
+  padding: 2rem;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.2em;
+  border-top: 3px solid lightgrey;
+  background: transparent;
+  &:last-child {
+    border-bottom: 3px solid lightgrey;
+  }
 `;
