@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 
 export const Title = () => {
   return (
-    <Header 
-    initial={{scale: 0.3}}
-    animate={{scale: 1}}
-    transition={{type: 'spring', stiffness: 250}}>
+    <Header
+      initial={{ scale: 0.3 }}
+      animate={{ scale: 1 }}
+      transition={{ type: "spring", stiffness: 250 }}
+    >
       <h1>
-        <span>Gaming Site</span>
-        <span>Gaming Site</span>
+        <span>Arcade Club</span>
+        <span>Arcade Club</span>
       </h1>
       <h2>Lets Play!</h2>
     </Header>
@@ -17,7 +18,7 @@ export const Title = () => {
 };
 
 const Header = styled(motion.div)`
-  margin-top: 10rem;
+  margin: 15rem 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;

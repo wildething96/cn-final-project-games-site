@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useDimensions } from "../utils/dimensions";
 import { motion } from "framer-motion";
 import { linkData } from "../utils/linkData";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const flexVariants = {
   open: (height = 1000) => ({
@@ -23,7 +24,8 @@ const flexVariants = {
       type: "spring",
       stiffness: 400,
       damping: 40,
-      staggerChildren: 0.05,
+      staggerChildren: 0.11,
+      staggerDirection: -1,
     },
   },
 };
@@ -101,6 +103,7 @@ export const Navbar = ({ loggedIn }) => {
           {linkData.map((link) => (
             <SyledLink
               key={linkData.indexOf(link)}
+              onClick={() => setOpen(!open)}
               to={link.url}
               style={style}
               variants={linkVariants}
@@ -109,7 +112,7 @@ export const Navbar = ({ loggedIn }) => {
                 boxShadow: "0px 0px 8px rgb(255, 255, 255)",
               }}
             >
-              {link.title}
+              <h3>{link.title}</h3>
             </SyledLink>
           ))}
         </Flex>
@@ -124,6 +127,7 @@ const StyledNavbar = styled(motion.div)`
   position: fixed;
   top: 0;
   height: 100%;
+  z-index: 9000;
 `;
 
 const Button = styled(motion.div)`
@@ -132,10 +136,10 @@ const Button = styled(motion.div)`
   text-align: center;
   width: 80px;
   height: 80px;
-  border-radius: 60%;
+  border-radius: 100px;
   margin: 5.5rem 0 5.5rem 5.5rem;
   color: white;
-  z-index: 10;
+  z-index: 9000;
   border: 2px solid lightgrey;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -148,10 +152,9 @@ const Flex = styled(motion.div)`
   border-top: none;
   height: 100%; 
   width: 250px;
-  color: white;
   background-color #7c3aa6;
   background-image linear-gradient(315deg,  #b33ba7 3%, #46265c 50%, #0c7aad 74%, #073f59 100% );
-  z-index: 10;
+  z-index: 9000;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 `;
@@ -161,9 +164,14 @@ const SyledLink = styled(motion(Link))`
   padding: 2rem;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 1.2em;
   border-top: 3px solid lightgrey;
   background: transparent;
+  box-shadow: rgba(52, 50, 54, 0.17) 0px -23px 25px 0px inset,
+    rgba(52, 50, 544, 0.15) 0px -36px 30px 0px inset,
+    rgba(52, 50, 54, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   &:last-child {
     border-bottom: 3px solid lightgrey;
   }
