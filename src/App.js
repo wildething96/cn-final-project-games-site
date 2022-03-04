@@ -2,14 +2,14 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/navbar";
-import { Home } from "./Pages/Home";
-import { Game } from "./Pages/Game";
-import { Login } from "./Pages/Login";
-import { Register } from "./Pages/Register";
-import { Profile } from "./Pages/Profile";
-import { FAQs } from "./Pages/FAQs";
-import { GetInTouch } from "./Pages/GetInTouch";
-import { ErrorPage } from "./Pages/ErrorPage";
+import { Home } from "./pages/Home";
+import { Game } from "./pages/Game";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import { Profile } from "./pages/Profile";
+import { FAQs } from "./pages/FAQs";
+import { GetInTouch } from "./pages/GetInTouch";
+import { ErrorPage } from "./pages/ErrorPage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
