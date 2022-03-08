@@ -13,6 +13,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [profile, setProfile] = useState({});
 
   return (
     <Router>
@@ -22,7 +23,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile setProfile={setProfile} username={profile.username} email={profile.email}/>} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/getintouch" element={<GetInTouch />} />
         <Route path="*" element={<ErrorPage />} />

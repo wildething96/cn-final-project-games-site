@@ -3,8 +3,9 @@ import { useState } from "react";
 import { GoSettings } from "react-icons/go";
 import React, { Component } from "react";
 import { ToggleSwitch } from "../components/toggleSwitch";
+import { getRequest, postRequest } from "../utils/fetchRequests";
 
-export const Profile = () => {
+export const Profile = (props) => {
   const [editable, setEditable] = useState(false);
   const [darkTheme, setDarkTheme] = useState(true);
   return (
@@ -20,7 +21,7 @@ export const Profile = () => {
             <h2>My Profile</h2>
             <p>First Name</p>
             <Input editable={editable} contentEditable={editable}>
-              Bill
+              {props.username}
             </Input>
             <p>Last Name</p>
             <Input editable={editable} contentEditable={editable}>
@@ -28,11 +29,11 @@ export const Profile = () => {
             </Input>
             <p>Username</p>
             <Input editable={editable} contentEditable={editable}>
-              TheBills91
+            {props.username}
             </Input>
             <p>Email</p>
             <Input editable={editable} contentEditable={editable}>
-              BillJ@email.co.uk
+            {props.email}
             </Input>
             <Buttons>
               <button onClick={() => setEditable(true)}>Edit</button>
@@ -55,7 +56,11 @@ export const Profile = () => {
               </div>
             </Split>
           </Menu>
-          <Menu></Menu>
+          <Menu>
+            <button onClick={postRequest}>
+              Get Data
+            </button>
+          </Menu>
         </InnerContainer>
       </Container>
     </div>
