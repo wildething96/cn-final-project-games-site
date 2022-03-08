@@ -45,12 +45,13 @@ export const Profile = () => {
             <Split>
               <div>
                 <h2>Settings</h2>
-                <React.Fragment>
-                  <ToggleSwitch label="Dark Theme" />
-                </React.Fragment>
+                <p>Dark Theme</p>
               </div>
               <div>
-                <Icon />
+                <Icon size={28} />
+                <React.Fragment>
+                  <ToggleSwitch label=" " />
+                </React.Fragment>
               </div>
             </Split>
             {/* <h2>
@@ -152,9 +153,9 @@ const Split = styled.div`
   display: flex;
   flex-flow: nowrap row;
   width: 100%;
-  justify-content: space-between; 
+  justify-content: space-between;
 `;
 
 const Icon = styled(GoSettings)`
-  margin-left: 00%;
+  margin-left: 1.5rem;
 `;

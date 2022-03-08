@@ -1,4 +1,5 @@
 .container {
+  color: white;
     margin-top: 2rem;
     font-size: 0.85em;
     font-weight: 400;
@@ -7,12 +8,11 @@
     position: relative;
     width: 75px;
     display: inline-block;
-    top: 8px;
-    left: 45%;
   }
   .checkbox {
     display: none;
   }
+  
   .label {
     display: block;
     overflow: hidden;
