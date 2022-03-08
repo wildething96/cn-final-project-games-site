@@ -54,12 +54,6 @@ export const Profile = () => {
                 </React.Fragment>
               </div>
             </Split>
-            {/* <h2>
-              Settings <Icon />
-              <React.Fragment>
-                <ToggleSwitch label="Dark Theme" />
-              </React.Fragment>
-            </h2> */}
           </Menu>
           <Menu></Menu>
         </InnerContainer>
