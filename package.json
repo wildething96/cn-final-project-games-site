@@ -14,7 +14,12 @@
     "react-scripts": "5.0.0",
     "react-switch": "^6.0.0",
     "styled-components": "^5.3.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-transition-group": "^4.4.1",
+    "swiper": "^6.5.4",
+    "uuid": "^8.3.2"
+
+
   },
   "scripts": {
     "start": "react-scripts start",
