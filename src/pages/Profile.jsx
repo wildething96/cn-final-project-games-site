@@ -29,11 +29,11 @@ export const Profile = (props) => {
             </Input>
             <p>Username</p>
             <Input editable={editable} contentEditable={editable}>
-            {props.username}
+              {props.username}
             </Input>
             <p>Email</p>
             <Input editable={editable} contentEditable={editable}>
-            {props.email}
+              {props.email}
             </Input>
             <Buttons>
               <button onClick={() => setEditable(true)}>Edit</button>
@@ -57,9 +57,7 @@ export const Profile = (props) => {
             </Split>
           </Menu>
           <Menu>
-            <button onClick={postRequest}>
-              Get Data
-            </button>
+            <button onClick={getRequest}>Get Data</button>
           </Menu>
         </InnerContainer>
       </Container>
