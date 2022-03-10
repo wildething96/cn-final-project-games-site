@@ -5,13 +5,19 @@ import PText from './PText';
 
 const FooterStyle = styled.div`
   background-color: var(--deep-dark);
-  padding-top: 10rem;
+  padding-top: 6rem;
   .container {
     display: flex;
     gap: 3rem;
   }
   .footer__col1 {
     flex: 2;
+
+  p{
+    margin-top: 2.3rem;
+    font-size: 1.5em;
+    align-text: center;
+  }
   }
   .footer__col2,
   .footer__col3,
@@ -19,8 +25,9 @@ const FooterStyle = styled.div`
     flex: 1;
   }
   .footer__col1__title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    white-space: nowrap;
   }
   .copyright {
     background-color: var(--dark-bg);
@@ -52,16 +59,16 @@ const FooterStyle = styled.div`
   }
 `;
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <FooterStyle>
       <div className="container">
         <div className="footer__col1">
           <h1 className="footer__col1__title">Desk 4 Team</h1>
-          <PText>
+          <p>
             We are junior developers starting out our journey with Code Nation,
             this is our colabrative group project.
-          </PText>
+          </p>
         </div>
         <div className="footer__col2">
           <FooterCol
@@ -85,7 +92,7 @@ export default function Footer() {
               {
                 type: 'Link',
                 title: 'Contact',
-                path: '/contact',
+                path: '/getInTouch',
               },
             ]}
           />
@@ -131,12 +138,12 @@ export default function Footer() {
       </div>
       <div className="copyright">
         <div className="container">
-          <PText>
+          <p>
             © 2022 - Sattar, Ben and Daniel | Designed By{' '}
             <a target="_blank" rel="noreferrer" href="">
               CodeNation
             </a>{' '}
-          </PText>
+          /</p>
         </div>
       </div>
     </FooterStyle>

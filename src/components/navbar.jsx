@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { useDimensions } from "../utils/dimensions";
 import { motion } from "framer-motion";
 import { linkData } from "../utils/linkData";
-import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const flexVariants = {
   open: (height = 1000) => ({

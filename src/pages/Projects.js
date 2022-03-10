@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { MdSearch } from 'react-icons/md';
-import SectionTitle from '../components/SectionTitle';
-import GamesInfo from '../assets/data/games';
-import GameItem from '../components/GameItem';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { MdSearch } from "react-icons/md";
+import SectionTitle from "../components/SectionTitle";
+import GamesInfo from "../assets/data/games";
+import GameItem from "../components/GameItem";
 
 const ProjectStyle = styled.div`
   padding: 10rem 0;
@@ -45,11 +45,18 @@ const ProjectStyle = styled.div`
   }
 `;
 
-export default function Projects() {
-  const [searchText, setSearchText] = useState('');
+const SerachSvg = styled(MdSearch)`
+  margin: 0 -2rem 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const Projects = () => {
+  const [searchText, setSearchText] = useState("");
   const [projectsData, setProjectsData] = useState(GamesInfo);
   useEffect(() => {
-    if (searchText === '') return;
+    if (searchText === "") return;
     setProjectsData(() =>
       GamesInfo.filter((item) =>
         item.name.toLowerCase().match(searchText.toLowerCase())
@@ -79,7 +86,7 @@ export default function Projects() {
                 onChange={handleChange}
                 placeholder="Games Name"
               />
-              <MdSearch className="searchIcon" />
+              <SerachSvg className="searchIcon" />
             </form>
           </div>
           <div className="projects__allItems">
@@ -96,4 +103,4 @@ export default function Projects() {
       </ProjectStyle>
     </>
   );
-}
+};

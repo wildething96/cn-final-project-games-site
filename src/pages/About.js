@@ -73,7 +73,7 @@ const AboutPageStyles = styled.div`
   }
 `;
 
-export default function About() {
+export const About = () => {
   return (
     <>
       <AboutPageStyles>

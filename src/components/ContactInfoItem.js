@@ -26,7 +26,7 @@ const ItemStyles = styled.div`
 `;
 
 export default function ContactInfoItem({
-  icon = <MdPlace />,
+  icon = <MapSvg />,
   text = 'I need text ',
 }) {
   return (
@@ -38,3 +38,10 @@ export default function ContactInfoItem({
     </ItemStyles>
   );
 }
+
+const MapSvg = styled(MdPlace)`
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;

@@ -8,6 +8,10 @@ export const linkData = [
     title: "Profile",
   },
   {
+    url: "/projects",
+    title: "Projects",
+  },
+  {
     url: "/login",
     title: "Login",
   },
@@ -18,6 +22,10 @@ export const linkData = [
   {
     url: "/getintouch",
     title: "Get in Touch",
+  },
+  {
+    url: "/about",
+    title: "About",
   },
   {
     url: "/faqs",

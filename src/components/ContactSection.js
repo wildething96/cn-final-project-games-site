@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdEmail, MdLocalPhone } from 'react-icons/md';
-import ContactForm from './ContactForm';
-import ContactInfoItem from './ContactInfoItem';
-import SectionTitle from './SectionTitle';
+import React from "react";
+import styled from "styled-components";
+import { MdEmail, MdLocalPhone } from "react-icons/md";
+import ContactForm from "./ContactForm";
+import ContactInfoItem from "./ContactInfoItem";
+import SectionTitle from "./SectionTitle";
 
 const ContactSectionStyle = styled.div`
   padding: 10rem 0;
@@ -16,7 +16,7 @@ const ContactSectionStyle = styled.div`
   }
   .contactSection__wrapper::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 2px;
     height: 50%;
     background-color: var(--gray-1);
@@ -58,8 +58,8 @@ export default function ContactSection() {
         <SectionTitle heading="contact" subheading="get in touch" />
         <div className="contactSection__wrapper">
           <div className="left">
-            <ContactInfoItem icon={<MdLocalPhone />} text="0161 533 0541" />
-            <ContactInfoItem icon={<MdEmail />} text="random@gmail.com" />
+            <ContactInfoItem icon={<PhoneSvg />} text="0161 533 0541" />
+            <ContactInfoItem icon={<EmailSvg />} text="random@gmail.com" />
             <ContactInfoItem text="UA92, Brian Statham Way, Old Trafford, Stretford, Manchester M16 0PU" />
           </div>
           <div className="right">
@@ -70,3 +70,18 @@ export default function ContactSection() {
     </ContactSectionStyle>
   );
 }
+
+const PhoneSvg = styled(MdLocalPhone)`
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const EmailSvg = styled(MdEmail)`
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
