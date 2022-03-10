@@ -36,12 +36,21 @@ const ProjectItemStyles = styled.div`
       height: 350px;
     }
   }
+  .gameButton {
+    display: inline-block;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    margin: 2rem 0;
+    color: royalblue;
+  }
 `;
+
 
 export default function ProjectItem({
   img = GameImg,
   title = 'Project Name',
   desc = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  link,
 }) {
   return (
     <ProjectItemStyles>
@@ -53,6 +62,16 @@ export default function ProjectItem({
           <h3 className="projectItem__title">{title}</h3>
         </Link>
         <p className="projectItem__desc">{desc}</p>
+        {link && (
+          <a
+            className="gameButton"
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Click to play
+          </a>
+        )}
       </div>
     </ProjectItemStyles>
   );
