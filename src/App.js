@@ -23,7 +23,7 @@ function App() {
       <Navbar loggedIn={loggedIn} style={{ zIndex: 1000 }} />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/game" element={<Game />} /> */}
+        <Route path="/game" element={<Game />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
