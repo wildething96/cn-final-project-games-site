@@ -75,7 +75,7 @@ margin-top: -10rem;
   }
   .hero__scrollDown {
     img {
-      max-height: 70px;
+      max-height: 60px;
     }
   }
 
@@ -88,7 +88,7 @@ margin-top: -10rem;
           font-size: 1.6rem;
           transform: rotate(-90deg);
           letter-spacing: 5px;
-          margin-bottom: 3rem;
+          margin-bottom: 5rem;
         }
       }
     }
@@ -191,3 +191,57 @@ export const HeroSection = () => {
     </HeroStyles>
   );
 };
+
+// </div>
+// <div className="hero__social">
+//   <div className="hero__social__indicator">
+//     <p>GitHub</p>
+//     <img src={SocialMediaArrow} alt="icon" />
+//   </div>
+//   <div className="hero__social__text">
+//     <ul>
+//       <li>
+//         <a
+//           href="https://github.com/MrPiccolo23"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           SN
+//         </a>
+//       </li>
+//       <li>
+//         <a
+//           href="https://github.com/wildething96"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           BW
+//         </a>
+//       </li>
+//       <li>
+//         <a
+//           href="https://github.com/DannyABoat"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           DB
+//         </a>
+//       </li>
+//       <li>
+//         <a
+//           href="https://wearecodenation.com/"
+//           target="_blank"
+//           rel="noreferrer"
+//         >
+//           LI
+//         </a>
+//       </li>
+//     </ul>
+//   </div>
+// </div>
+// <div className="hero__scrollDown">
+//   <p>Scroll</p>
+//   <img src={ScrollDownArrow} alt="ScrollDown Arrow" />
+// </div>
+// </div>
+// </div>

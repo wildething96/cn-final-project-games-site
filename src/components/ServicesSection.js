@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdDesktopMac, MdCode, MdPhonelinkSetup } from 'react-icons/md';
+import { MdDesktopMac, MdCode, MdGames } from 'react-icons/md';
 import styled from 'styled-components';
 import SectionTitle from './SectionTitle';
 import ServicesSectionItem from './ServicesSectionItem';
@@ -40,9 +40,9 @@ export default function ServicesSection() {
             desc="We also develop the websites. We create high performance website with blazing fast speed."
           />
           <ServicesSectionItem
-            icon={<MdPhonelinkSetup />}
-            title="app Dev"
-            desc="We develop mobile application. We create mobile app with eye catching ui. "
+            icon={<MdGames />}
+            title="Game Dev"
+            desc="We develop game applications. We create game app with eye catching ui. "
           />
         </div>
       </div>

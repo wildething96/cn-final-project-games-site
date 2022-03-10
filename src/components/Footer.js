@@ -94,6 +94,16 @@ export const Footer = () => {
                 title: 'Contact',
                 path: '/getInTouch',
               },
+              {
+                type: 'Link',
+                title: 'Login',
+                path: '/login',
+              },
+              {
+                type: 'Link',
+                title: 'Register',
+                path: '/register',
+              },
             ]}
           />
         </div>
@@ -111,7 +121,7 @@ export const Footer = () => {
               },
               {
                 title: `UA92, Brian Statham Way, Old Trafford, Stretford, Manchester M16 0PU`,
-                path: 'http://google.com/maps',
+                path: 'https://www.google.co.uk/maps/place/Code+Nation/@53.4570382,-2.2870365,15z/data=!4m5!3m4!1s0x0:0x965f3c33ead91c5d!8m2!3d53.4573771!4d-2.2872844',
               },
             ]}
           />
@@ -140,7 +150,11 @@ export const Footer = () => {
         <div className="container">
           <p>
             © 2022 - Sattar, Ben and Daniel | Designed By{' '}
-            <a target="_blank" rel="noreferrer" href="">
+            <a 
+              target="_blank"
+              rel="noreferrer"
+              href="https://wearecodenation.com/"
+            >
               CodeNation
             </a>{' '}
           /</p>

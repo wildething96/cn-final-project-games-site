@@ -27,7 +27,7 @@ export default function ContactBanner() {
     <ContactBannerStyles>
       <div className="container">
         <div className="contactBanner__wrapper">
-          <PText>What us to add more arcade games?</PText>
+          <PText>What us to add more arcade games or add your own?</PText>
           <h3 className="contactBanner__heading">Get in touch</h3>
           <Button btnText="Contact Now" btnLink="/contact" />
         </div>

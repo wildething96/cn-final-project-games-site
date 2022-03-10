@@ -81,17 +81,25 @@ export const About = () => {
           <div className="top-section">
             <div className="left">
               <p className="about__subheading">
-                Hi, <span>Welcome to About Us</span>
+                Hi, <span>Welcome Player and Creators</span>
               </p>
-              <h2 className="about__heading">Play Classic Indie Games</h2>
+              <h2 className="about__heading">Our Mission</h2>
               <div className="about__info">
                 <PText>
-                  li
+                  Are you enthusiast about playing classic arcade games PlayFree
+                  arcade games online right here,right now! Our collection of
+                  classic browser games means no downloads are necessary.
                   <br /> <br />
-                  Lorem ipsum dolor sit amet, consectetur adipiscing.
+                  Whether you're feeling nostalgic for classic arcade games,
+                  including Street fighter and Doom, or looking to try more
+                  modern favourites, we've got all the arcade games needed to
+                  keep you entertained for hours. Forget fumbling with coins at
+                  an arcade game machine; simply play for free instantly here.
                   <br />
                   <br />
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  If you want us to add more games or create your own. Please
+                  feel free to contact us, your request will go through our
+                  review process and we will get back to you soon as possible.
                 </PText>
               </div>
               <Button btnText="Download Brochure" btnLink="#" />
@@ -105,16 +113,16 @@ export const About = () => {
               <h1 className="about__info__heading">Info</h1>
 
               <AboutInfoItem
-                title="Developers"
+                title="Monetization"
                 items={['We are collection of game and web developes']}
               />
               <AboutInfoItem
-                title="Unique Players"
-                items={['aaaADDD, aaaa dffasf']}
+                title="Data"
+                items={['2 million unique players, get access to data insigns']}
               />
               <AboutInfoItem
-                title="Games"
-                items={['adddass, asddd ,sddsddssds']}
+                title="Studios"
+                items={['Bandai Namco, Supercell ,Capcom, Nintendo']}
               />
             </div>
             <div className="about__info__item">
@@ -122,11 +130,11 @@ export const About = () => {
 
               <AboutInfoItem
                 title="FrontEnd"
-                items={['HTML', 'CSS', 'JavaScript', 'REACT']}
+                items={['HTML', 'CSS', 'JavaScript', 'REACT', 'Netlify']}
               />
               <AboutInfoItem
                 title="BackEnd"
-                items={['Node', 'Express', 'Heroku']}
+                items={['Node', 'Express', 'Heroku', 'MongoDB', 'Mongoose']}
               />
               <AboutInfoItem
                 title="Design"
@@ -138,7 +146,7 @@ export const About = () => {
 
               <AboutInfoItem
                 title="2020-2022"
-                items={['junior developer at Code Nation']}
+                items={['Junior developer at Code Nation']}
               />
               <AboutInfoItem
                 title="2020-2022"

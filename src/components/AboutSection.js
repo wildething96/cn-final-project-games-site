@@ -79,9 +79,11 @@ export default function AboutSection() {
             subheading="Let us introduce ourselfs"
             heading="About Us"
           />
-          {/* <PText>
-          ip culpa qui officia deserunt mollit anim id est laborum.
-          </PText> */}
+          <PText>
+            Our mission is to make and provide games that grown-ups and children
+            love to play. You are front and centre in our decision making
+            process for every game we make.
+          </PText>
           <div className="aboutSection__buttons">
             <Button btnText="Works" btnLink="/projects" />
             <Button btnText="Read More" btnLink="/about" outline />
