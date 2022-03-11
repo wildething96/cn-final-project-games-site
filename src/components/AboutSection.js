@@ -6,7 +6,7 @@ import SectionTitle from './SectionTitle';
 import AboutImg from '../assets/images/about-sec-img.jpg';
 
 const AboutSectionStyles = styled.div`
-  padding: 10rem 0;
+  padding: 0 0 15rem 0;
   .container {
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ const AboutSectionStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
   }
   @media only screen and (max-width: 950px) {
@@ -60,7 +60,6 @@ const AboutSectionStyles = styled.div`
     }
     .aboutSection__buttons {
       flex-direction: column;
-      gap: 0rem;
       .button-wrapper,
       a {
         width: 100%;
@@ -70,7 +69,14 @@ const AboutSectionStyles = styled.div`
   }
 `;
 
-export default function AboutSection() {
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: conatin;
+
+`
+
+export const AboutSection = () => {
   return (
     <AboutSectionStyles>
       <div className="container">
@@ -90,7 +96,7 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="aboutSection__right">
-          <img className="aboutImg" src={AboutImg} alt="Img" />
+          <Image className="aboutImg" src={AboutImg} alt="Img" />
         </div>
       </div>
     </AboutSectionStyles>

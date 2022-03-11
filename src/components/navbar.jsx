@@ -51,12 +51,17 @@ const Path = (props) => (
   />
 );
 
-export const Navbar = ({ loggedIn }) => {
+export const Navbar = ({ loggedIn, setLoggedIn, setProfile }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   const style = { textDecoration: "none", color: "white" };
 
+  const logOut = () => {
+    setLoggedIn(false);
+    setOpen(false);
+    setProfile({});
+  };
   return (
     <div>
       <StyledNavbar>
@@ -99,21 +104,30 @@ export const Navbar = ({ loggedIn }) => {
               />
             </svg>
           </Button>
-          {linkData.map((link) => (
-            <SyledLink
-              key={linkData.indexOf(link)}
-              onClick={() => setOpen(!open)}
-              to={link.url}
-              style={style}
-              variants={linkVariants}
-              whileHover={{
-                background: "LightBlue",
-                boxShadow: "0px 0px 8px rgb(255, 255, 255)",
-              }}
-            >
-              <h3>{link.title}</h3>
-            </SyledLink>
-          ))}
+          {linkData.map(
+            (link) =>
+              (link.loggedIn === 0 ||
+                (link.loggedIn === 1 && loggedIn) ||
+                (link.loggedIn === 2 && !loggedIn)) && (
+                <SyledLink
+                  key={linkData.indexOf(link)}
+                  onClick={
+                    link.title === "Log Out"
+                      ? logOut
+                      : () => setOpen(!open)
+                  }
+                  to={link.url}
+                  style={style}
+                  variants={linkVariants}
+                  whileHover={{
+                    background: "LightBlue",
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                  }}
+                >
+                  <h3>{link.title}</h3>
+                </SyledLink>
+              )
+          )}
         </Flex>
         )
       </StyledNavbar>

@@ -52,7 +52,8 @@ const SerachSvg = styled(MdSearch)`
   object-fit: cover;
 `;
 
-export const Projects = () => {
+export const Projects = ({setGame}) => {
+  setGame(false);
   const [searchText, setSearchText] = useState("");
   const [projectsData, setProjectsData] = useState(GamesInfo);
   useEffect(() => {
@@ -96,6 +97,7 @@ export const Projects = () => {
                 title={item.name}
                 desc={item.desc}
                 img={item.img}
+                link={item.link}
               />
             ))}
           </div>

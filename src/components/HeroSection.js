@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import HeroImg from "../assets/images/Arcade.jpg";
 import SocialMediaArrow from "../assets/images/social-media-arrow.svg";
@@ -168,6 +169,8 @@ const Button = styled.button`
 `;
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
+  
   return (
     <HeroStyles>
       <div className="hero">
@@ -183,7 +186,7 @@ export const HeroSection = () => {
             {/* <PText>
               My name is sattar.
             </PText> */}
-            <Button btnLink="/projects">Click For Games</Button>
+            <Button onClick={() => navigate('/games')}>Click For Games</Button>
           </div>
 
         </div>

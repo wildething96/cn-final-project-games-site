@@ -2,38 +2,48 @@ export const linkData = [
   {
     url: "/",
     title: "Home",
+    loggedIn: 0,
   },
   {
     url: "/game",
     title: "Tetris Game",
+    loggedIn: 0,
   },
   {
     url: "/profile",
     title: "Profile",
+    loggedIn: 1,
   },
   {
-    url: "/projects",
-    title: "Projects",
+    url: "/games",
+    title: "Game Library",
+    loggedIn: 0,
   },
-  {
-    url: "/login",
-    title: "Login",
-  },
-  {
-    url: "/register",
-    title: "Register",
-  },
+
   {
     url: "/getintouch",
     title: "Get in Touch",
+    loggedIn: 0,
   },
   {
     url: "/about",
     title: "About",
+    loggedIn: 0,
   },
   {
-    url: "/faqs",
-    title: "FAQs",
+    url: "/login",
+    title: "Login",
+    loggedIn: 2,
+  },
+  {
+    url: "/register",
+    title: "Register",
+    loggedIn: 2,
+  },
+  {
+    url: "/",
+    title: "Log Out",
+    loggedIn: 1,
   },
 ];
 
