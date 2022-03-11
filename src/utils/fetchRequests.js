@@ -1,18 +1,23 @@
-export const postRequest = async () => {
+export const postRequest = async (
+  firstName,
+  lastName,
+  username,
+  email,
+  password
+) => {
   try {
-    const response = await fetch("https://m33-back-end.herokuapp.com/login", {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-          firstName: "ThisIsTheTest",
-          lastName: "ThisIsTheTest",
-        username: "testytesttest",
-        email: "testperson3@gmail.com",
-        phone: "078263921731",
-        pass: "test123",
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
       }),
       mode: "cors",
     });
@@ -23,16 +28,16 @@ export const postRequest = async () => {
   }
 };
 
-export const getRequest = async () => {
+export const getRequest = async (username) => {
   try {
-    const response = await fetch("https://m33-back-end.herokuapp.com/user", {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: "person2" }),
+      body: JSON.stringify({ username }),
     });
     const data = await response.json();
-    console.log(data);
-    // console.log(data.user[0]);
+    console.log(data.user[0]);
+    return data.user[0];
     // setProfile(data.user[0]);
   } catch (error) {
     console.log(error);
