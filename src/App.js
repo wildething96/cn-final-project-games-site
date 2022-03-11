@@ -13,6 +13,7 @@ import { Projects } from "./pages/Projects";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Footer } from "./components/Footer";
 import { About} from "./pages/About"
+import { TetrisGame } from "./pages/tetrisGame"
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -23,16 +24,17 @@ function App() {
       <Navbar loggedIn={loggedIn} style={{ zIndex: 1000 }} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/game" element={<TetrisGame />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setProfile={setProfile}/>} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/profile"
           element={
             <Profile
-              setProfile={setProfile}
+              firstName={profile.firstName}
+              lastName={profile.lastName}
               username={profile.username}
               email={profile.email}
             />

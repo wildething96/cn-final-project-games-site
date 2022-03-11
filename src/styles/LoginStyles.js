@@ -34,6 +34,7 @@ export const LoginStyles = styled.div`
 
   input[type='text'],
   input[type='password'],
+  input[type='email'],
   button,
   textarea {
     font-size: 22px;

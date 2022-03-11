@@ -4,6 +4,10 @@ export const linkData = [
     title: "Home",
   },
   {
+    url: "/game",
+    title: "Tetris Game",
+  },
+  {
     url: "/profile",
     title: "Profile",
   },
