@@ -15,7 +15,7 @@ export const LoginStyles = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     padding: 2.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(200, 200, 200, 0.4);
     border-radius: 12px;
   }
   form {
