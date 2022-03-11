@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import styledComponents from "styled-components";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const GameCard = (props) => {
   let navigate = useNavigate();
+
+  const openPage = (link) => {
+    window.open(link, "_self");
+  };
 
   return (
     <div>
@@ -12,11 +16,13 @@ export const GameCard = (props) => {
         </div>
         <div>
           <h4
-            onClick={() => {
-              navigate("/Profile");
-            }}
+            onClick={
+              props.name === "Tetris"
+                ? navigate(props.link)
+                : () => openPage(props.link)
+            }
           >
-            {props.title}
+           {props.title}
           </h4>
           <p>{props.description}</p>
         </div>
@@ -48,7 +54,7 @@ const Card = styled.div`
   div: first-child { 
     box-sizing: border-box;
     width: 395px;
-    height: 163px;
+    height: 185px;
     img {
       background: #695669;
       color: lightgrey;

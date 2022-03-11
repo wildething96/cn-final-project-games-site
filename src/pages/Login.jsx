@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs");
 
 const LOGIN_URL = "/auth";
 
-export const Login = ({ setProfile }) => {
+export const Login = ({ setProfile, setLoggedIn }) => {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
@@ -70,6 +70,7 @@ export const Login = ({ setProfile }) => {
         setUser("");
         setPwd("");
         setSuccess(true);
+        setLoggedIn(true);
       } else {
         console.log("No match");
       }

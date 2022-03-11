@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import GameImg from '../assets/images/gameImg.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import GameImg from "../assets/images/gameImg.png";
 
 const ProjectItemStyles = styled.div`
   .projectItem__img {
@@ -28,7 +29,7 @@ const ProjectItemStyles = styled.div`
   }
   .projectItem__desc {
     font-size: 1.6rem;
-    font-family: 'RobotoMono Regular';
+    font-family: "RobotoMono Regular";
     margin-top: 1rem;
   }
   @media only screen and (max-width: 768px) {
@@ -45,33 +46,33 @@ const ProjectItemStyles = styled.div`
   }
 `;
 
+const Image = styled.img`
+  cursor: pointer;
+`
 
 export default function ProjectItem({
   img = GameImg,
-  title = 'Project Name',
-  desc = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  title = "Project Name",
+  desc = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   link,
 }) {
+  const openPage = (link) => {
+    window.open(link, "_self");
+  };
+  const navigate = useNavigate();
   return (
     <ProjectItemStyles>
-      <Link to="/projects" className="projectItem__img">
-        <img src={img} alt="project img" />
-      </Link>
+      <div
+        onClick={
+          title === "Tetris" ? () => navigate(link) : () => openPage(link)
+        }
+        className="projectItem__img"
+      >
+        <Image src={img} alt="project img" />
+      </div>
       <div className="projectItem__info">
-        <Link to="#">
-          <h3 className="projectItem__title">{title}</h3>
-        </Link>
+        <h3 className="projectItem__title">{title}</h3>
         <p className="projectItem__desc">{desc}</p>
-        {link && (
-          <a
-            className="gameButton"
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Click to play
-          </a>
-        )}
       </div>
     </ProjectItemStyles>
   );

@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { ToggleSwitch } from "../components/toggleSwitch";
 
 export const Profile = (props) => {
+  props.setGame(false);
   const [editable, setEditable] = useState(false);
   const [darkTheme, setDarkTheme] = useState(true);
   return (

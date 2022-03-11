@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { GameCard } from "./gameCard";
-import { gameData } from "../utils/gameData";
+import { games } from "../assets/data/games";
+import DonkeyImg from '../images/donkey.jpg';
+import TetrisImg from '../images/tetris.jpg';
+import SpaceImg from '../images/space.jpg';
+import PacManImg from '../images/pacman.jpg';
+import StreetImg from '../images/street.jpg';
+import DoomImg from '../images/doom.jpg';
 
 export const Carousel = (props) => {
   const [width, setWidth] = useState(0);
@@ -17,12 +23,13 @@ export const Carousel = (props) => {
       <CarouselTitle>{props.title}</CarouselTitle>
       <OuterCarousel ref={carousel} whileTap={{ cursor: "grabbing" }}>
         <InnerCarousel drag="x" dragConstraints={{ right: 0, left: -width }}>
-          {gameData.map((game) => (
+          {games.map((game) => (
             <GameCard
-              key={gameData.indexOf(game)}
-              title={game.title}
+              key={games.indexOf(game)}
+              title={game.name}
               img={game.img}
               description={game.description}
+              link={game.link}
             />
           ))}
         </InnerCarousel>

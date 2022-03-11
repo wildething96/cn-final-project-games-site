@@ -7,8 +7,7 @@ import AboutInfoItem from '../components/AboutInfoItem';
 import ContactBanner from '../components/ContactBanner';
 
 const AboutPageStyles = styled.div`
-  padding: 20rem 0 10rem 0;
-
+    padding: 10rem 0 0rem 0;
   .top-section {
     display: flex;
     align-items: center;
@@ -102,29 +101,12 @@ export const About = () => {
                   review process and we will get back to you soon as possible.
                 </PText>
               </div>
-              <Button btnText="Download Brochure" btnLink="#" />
             </div>
             <div className="right">
               <img src={AboutImg} alt="me" />
             </div>
           </div>
           <div className="about__info__items">
-            <div className="about__info__item">
-              <h1 className="about__info__heading">Info</h1>
-
-              <AboutInfoItem
-                title="Monetization"
-                items={['We are collection of game and web developes']}
-              />
-              <AboutInfoItem
-                title="Data"
-                items={['2 million unique players, get access to data insigns']}
-              />
-              <AboutInfoItem
-                title="Studios"
-                items={['Bandai Namco, Supercell ,Capcom, Nintendo']}
-              />
-            </div>
             <div className="about__info__item">
               <h1 className="about__info__heading">Tech</h1>
 
@@ -145,21 +127,24 @@ export const About = () => {
               <h1 className="about__info__heading">Experiences</h1>
 
               <AboutInfoItem
-                title="2020-2022"
-                items={['Junior developer at Code Nation']}
+                title="2021-2022"
+                items={['Front-End at Code Nation']}
               />
               <AboutInfoItem
-                title="2020-2022"
-                items={['Front end developer at Code nation ']}
+                title="2021"
+                items={['Cyber Security at Code nation ']}
               />
               <AboutInfoItem
-                title="2022-"
+                title="2022"
+                items={['Back-End developer at Code nation ']}
+              />
+              <AboutInfoItem
+                title="2022 -"
                 items={['Freelance web Developer']}
               />
             </div>
           </div>
         </div>
-        <ContactBanner />
       </AboutPageStyles>
     </>
   );

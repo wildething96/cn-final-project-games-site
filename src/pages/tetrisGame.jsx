@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Tetris } from "../components/Tetris";
 
-export const TetrisGame = () => {
+export const TetrisGame = ({ setGame }) => {
+  setGame(true);
   return (
     <>
       <Tetris />

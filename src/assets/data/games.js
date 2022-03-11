@@ -6,14 +6,14 @@ import PacManImg from '../images/pacman.jpg';
 import StreetImg from '../images/street.jpg';
 import DoomImg from '../images/doom.jpg';
 
-const games = [
+export const games = [
   {
     id: uuidv4(),
     name: 'Tetris',
     desc:
       'Click image to play Tetris, this classic game came out in 1984 and was one of the first puzzle games.',
     img: TetrisImg,
-    link: 'https://tetris.com/play-tetris',
+    link: '/game',
   },
   {
     id: uuidv4(),
